@@ -8,6 +8,7 @@
     </div>
     <div class="container">
       <Child3 />
+      <Child4 />
     </div>
   </div>
 </template>
@@ -16,6 +17,7 @@
 import Child1 from './components/Child1.vue';
 import Child2 from './components/Child2.vue';
 import Child3 from './components/Child3.vue';
+import Child4 from './components/Child4.vue';
 
 import { v4 as uuidv4 } from 'uuid';
 import { AbstractUser, PhoneUser } from './classes/users';
@@ -26,6 +28,7 @@ export default {
     Child1,
     Child2,
     Child3,
+    Child4,
   },
   data () {
     return {
