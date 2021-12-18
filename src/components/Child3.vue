@@ -1,21 +1,26 @@
 <template>
   <div id="main">
-    <button>Click</button>
-    <button>Clear</button>
-    <textarea id="textArea"/>
+    <button @click="increment">Click</button>
+    <button @click="clear">Clear</button>
+    <textarea id="textArea" v-model="total"/>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Child3',
-  data () {
-    return {
-
-    }
+  computed: {
+    total () {
+      return this.$store.state.count;
+    },
   },
   methods: {
-    
+    increment () {
+      this.$store.commit('increment');
+    },
+    clear () {
+      this.$store.commit('clear');
+    },
   }
 }
 </script>
