@@ -14,5 +14,13 @@ export const store = new Vuex.Store({
     clear (state) {
       state.count = 0;
     }
+  },
+  getters: {
+    timesTen: state => {
+      return state.count * 10;
+    },
+    totalText: (state, getters) => {
+      return `Total: ${getters.timesTen}`;
+    }
   }
 })

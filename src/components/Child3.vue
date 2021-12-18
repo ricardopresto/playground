@@ -7,12 +7,21 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex';
+
 export default {
   name: 'Child3',
   computed: {
+    ...mapState([
+      'count'
+    ]),
+    ...mapGetters([
+      'totalText',
+      'timesTen'
+    ]),
     total () {
-      return this.$store.state.count;
-    },
+      return this.totalText;
+    }
   },
   methods: {
     increment () {
