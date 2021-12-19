@@ -1,6 +1,6 @@
 <template>
   <div id="main">
-    <button @click="getNewAbstractUser">Get New User</button>
+    <button id="button1" @click="getNewAbstractUser">Get New User</button>
     <button @click="$emit('clear-users')">Clear Users</button>
     <button @click="getNewPhoneUser">Get New Telephone User</button>
   </div>
