@@ -1,13 +1,13 @@
 <template>
   <div id="main">
-    <button @click="increment">Click</button>
+    <button @click="increase">Click</button>
     <button @click="clear">Clear</button>
     <textarea id="textArea" v-model="total"/>
   </div>
 </template>
 
 <script>
-import { mapState, mapGetters } from 'vuex';
+import { mapState, mapGetters, mapMutations } from 'vuex';
 
 export default {
   name: 'Child3',
@@ -24,8 +24,11 @@ export default {
     }
   },
   methods: {
-    increment () {
-      this.$store.commit('increment');
+    ...mapMutations([
+      'increment'
+    ]),
+    increase () {
+      this.increment(2);
     },
     clear () {
       this.$store.commit('clear');
